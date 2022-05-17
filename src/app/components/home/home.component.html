@@ -2,5 +2,24 @@
   <h1> Elevate your <br> surrounding </h1>
   <h6> Everyday make your surrounding clean & green and make <br> mother earth a better place to live </h6>
 
-</div>
+
+
+<app-input-page></app-input-page>
+  <div class="table table-dark">
+    <table>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Site</th>
+        <th scope="col">Sensor Name</th>
+        <th scope="col">Type</th>
+      </tr>
+      <tr *ngFor="let item of all_wastes ; let i=index">
+        <td scope="row">{{ item.number }}</td>
+        <td scope="row">{{ all_sensors[item.sensor_id-1].site }}</td>
+        <td scope="row">{{ all_sensors[item.sensor_id-1].name }}</td>
+      </tr>
+
+    </table>
+  </div>
+
 

@@ -1,6 +1,6 @@
 .banner
 {
-    background-image: url(../../../assets/featured.png);
+    background-image: url(../../../assets/images/featured.png);
     height: 600px;
     background-position: center;
     background-size: cover;
@@ -12,8 +12,6 @@
     font-size: 45px;
 
     left: 30px;
-
-
 }
 .banner h6
 {

@@ -11,6 +11,12 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SensorComponent } from './components/sensor/sensor.component';
+import { Sensor2Component } from './components/sensor2/sensor2.component';
+import { Sensor3Component } from './components/sensor3/sensor3.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { InputPageComponent } from './components/input-page/input-page.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,10 +24,15 @@ import { SensorComponent } from './components/sensor/sensor.component';
     HomeComponent,
     NavbarComponent,
     SensorComponent,
+    Sensor2Component,
+    Sensor3Component,
+    FooterComponent,
+    InputPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],

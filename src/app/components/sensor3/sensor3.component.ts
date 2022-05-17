@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DocumentReference, snapshotEqual } from 'firebase/firestore';
+
+import { snapshotEqual } from 'firebase/firestore';
 import { collectionChanges, collectionSnapshots} from "@angular/fire/firestore";
 import { map } from 'rxjs/operators';
 import sensor from "C:/Users/Ahmed/wastes/src/app/models/sensor"
@@ -7,25 +8,23 @@ import { DbService } from './../../services/db.service';
 import waste from 'src/app/models/wastes';
 
 
-
 @Component({
-  selector: 'app-sensor',
-  templateUrl: './sensor.component.html',
-  styleUrls: ['./sensor.component.css']
+  selector: 'app-sensor3',
+  templateUrl: './sensor3.component.html',
+  styleUrls: ['./sensor3.component.css']
 })
-export class SensorComponent implements OnInit {
-  all_sensors: any[];
-  all_wastes: any[];
+export class Sensor3Component implements OnInit {
+  all_sensors: any[] ;
+  all_wastes: any[] ;
 
   constructor(private db :DbService) {
-  this.all_sensors = [];
-  this.all_wastes = [];
+    this.all_sensors=[];
+    this.all_wastes=[];
   }
 
   ngOnInit(): void {
     this.show_sensors()
     this.show_wastes()
-    console.log(this.all_wastes)
   }
 
 
@@ -40,9 +39,9 @@ export class SensorComponent implements OnInit {
     ).subscribe(data => {
       this.all_sensors.splice(0);
       for (var val of data){
-        if(val['id']==1){
+        if(val['id']==3){
 
-          this.all_sensors.push(val)
+        this.all_sensors.push(val)
         }
       }
     });
@@ -59,16 +58,13 @@ export class SensorComponent implements OnInit {
         })
       })
     ).subscribe(data => {
-      this.all_wastes.splice(0);
+    this.all_wastes.splice(0);
       for (var val of data){
-        if(val ['sensor_id'] == 1){
-          this.all_wastes.push(val)
+        if(val ['sensor_id'] == 3){
+        this.all_wastes.push(val)
         }
       }
     });
   }
-
-
-
 
 }
