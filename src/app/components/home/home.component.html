@@ -17,7 +17,16 @@
         <td scope="row">{{ item.number }}</td>
         <td scope="row">{{ all_sensors[item.sensor_id-1].site }}</td>
         <td scope="row">{{ all_sensors[item.sensor_id-1].name }}</td>
+
+        <td *ngIf="item.number >= 1 && item.number<100">Metal</td>
+        <td *ngIf="item.number >= 100 && item.number<200">Paper</td>
+        <td *ngIf="item.number >= 300 && item.number<400">Glass</td>
+        <td *ngIf="item.number >= 400 && item.number<500">Organic</td>
+        <td *ngIf="item.number >= 500 && item.number<600">cardboard</td>
+        <td *ngIf="item.number >= 600 && item.number<700">cans</td>
+        <td *ngIf="item.number >= 700 && item.number<800">Aseptic cartons</td>
       </tr>
+
 
     </table>
   </div>

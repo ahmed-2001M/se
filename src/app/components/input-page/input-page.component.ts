@@ -28,7 +28,9 @@ export class InputPageComponent implements OnInit {
 
     this.db.addNewDocument(this.was).then((ref: DocumentReference) => {
       console.log("Document Id: " + ref.id);
-      this.ref = ref.id
+      if( this.was.number < 800 ){
+        this.ref = ref.id
+      }
     });
   }
 }

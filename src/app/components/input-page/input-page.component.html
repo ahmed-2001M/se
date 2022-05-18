@@ -1,6 +1,6 @@
 <div class="bg-img">
   <form action="/action_page.php" class="container">
-    <h1>Login</h1>
+    <h1> Input </h1>
 
     <label><b>Waste Number</b></label>
     <input type="text" name="first" [(ngModel)]="was.number" required>
@@ -9,6 +9,6 @@
     <label><b>Sensor ID</b></label>
     <input type="text"name="second" [(ngModel)]="was.sensor_id"required>
 
-    <button type="submit" class="btn" (click) = "addNewWaste(was.number , was.sensor_id)">Login</button>
+    <button type="submit" class="btn" *ngIf="was.number >= 1 && was.number <800" (click) = "addNewWaste(was.number , was.sensor_id)">Submit</button>
   </form>
 </div>
