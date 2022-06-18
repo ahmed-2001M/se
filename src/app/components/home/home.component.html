@@ -15,6 +15,7 @@
       </tr>
       <tr *ngFor="let item of all_wastes ; let i=index">
         <td scope="row">{{ item.number }}</td>
+
         <td scope="row">{{ all_sensors[item.sensor_id-1].site }}</td>
         <td scope="row">{{ all_sensors[item.sensor_id-1].name }}</td>
 

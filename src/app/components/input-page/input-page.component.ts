@@ -23,8 +23,8 @@ export class InputPageComponent implements OnInit {
 
 
   addNewWaste(number:number , sensor_id:number) {
-    this.was.number = number;
-    this.was.sensor_id = sensor_id;
+    this.was.number = Number(number);
+    this.was.sensor_id = Number(sensor_id);
 
     this.db.addNewDocument(this.was).then((ref: DocumentReference) => {
       console.log("Document Id: " + ref.id);

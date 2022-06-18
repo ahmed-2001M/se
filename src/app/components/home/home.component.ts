@@ -32,14 +32,14 @@ export class HomeComponent implements OnInit {
     collectionSnapshots(this.db.getAll('sensor')).pipe(
       map((changes) => {
         return changes.map((c) => {
+          console.log("Current data: ", c.data());
           return ({...c.data() })
         })
       })
     ).subscribe(data => {
       this.all_sensors.splice(0);
-      for (var val of data){
-        this.all_sensors.push(val)
-      }
+      this.all_sensors = data
+
     });
   }
 
@@ -49,14 +49,14 @@ export class HomeComponent implements OnInit {
     collectionSnapshots(this.db.getAll('wastes')).pipe(
       map((changes) => {
         return changes.map((c) => {
-          return ({ ...c.data() })
+          console.log("Current data: ", c.data());
+          return ({...c.data() })
         })
       })
     ).subscribe(data => {
       this.all_wastes.splice(0);
-      for (var val of data){
-        this.all_wastes.push(val)
-      }
+      this.all_wastes = data
+
     });
   }
 
